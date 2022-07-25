@@ -3,13 +3,14 @@ import CommentType from "./Comment";
 type ArticleType = {
   title: string;
   image: string;
-  author: string;
-  body: string;
-  category: {
-    name: string;
-    __v: number;
+  author: {
     _id: string;
+    firstName: string;
+    lastName: string;
+    picture: string;
   };
+  body: string;
+  category: string;
   isPublished: boolean;
   likes: string[];
   comments: CommentType[];
