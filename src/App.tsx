@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Article from "./Components/Article";
 import NotFound from "./Components/NotFound";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/articles/:id" element={<Article />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
+        <Navbar />
       </BrowserRouter>
     </div>
   );
