@@ -17,31 +17,26 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-start p-8 gap-20">
       {articles.map(article => {
-        const {
-          title,
-          author,
-          image,
-          category,
-          isPublished,
-          likes,
-          comments,
-          createdAt,
-          updatedAt,
-          _id,
-        } = article;
+        const { title, author, image, likes, createdAt, _id } = article;
         return (
-          <Link to={`/articles/${_id}`} key={_id}>
+          <Link
+            to={`/articles/${_id}`}
+            key={_id}
+            className=" h-[90vh] border rounded-lg w-[90vw] "
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* <img src={image} alt="" className=" " /> */}
             <h1>{title}</h1>
-            <p>{author}</p>
-            <p>{category.name}</p>
-            <p>{isPublished}</p>
-            <p>{likes}</p>
-            <p>{comments.length}</p>
-            <p>{createdAt}</p>
-            <p>{updatedAt}</p>
-            <img src={image} alt="" />
+            <p>{`${author.firstName} ${author.lastName}`}</p>
+            <p>{likes.length}</p>
+            <p>{new Date(createdAt).toLocaleString()}</p>
           </Link>
         );
       })}
