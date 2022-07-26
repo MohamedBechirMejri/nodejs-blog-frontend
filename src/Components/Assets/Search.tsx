@@ -13,14 +13,14 @@ const Search = () => {
         cx="11.7666"
         cy="11.7666"
         r="8.98856"
-        stroke="#200E32"
+        // stroke="#200E32"
         stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M18.0183 18.4851L21.5423 22"
-        stroke="#200E32"
+        // stroke="#200E32"
         stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"

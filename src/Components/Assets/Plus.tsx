@@ -11,14 +11,14 @@ const Plus = () => {
     >
       <path
         d="M12 8.3273V15.6537"
-        stroke="#200E32"
+        // stroke="white"
         stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M15.6667 11.9905H8.33333"
-        stroke="#200E32"
+        // stroke="white"
         stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
