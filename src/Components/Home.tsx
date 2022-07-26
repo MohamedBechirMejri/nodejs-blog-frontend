@@ -17,28 +17,29 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className="w-full px-8 py-4 font-bold text-3xl fixed top-0 left-0  backdrop-blur-sm z-50">
+    <div className="">
+      <h1 className="fixed top-0 left-0 z-50 w-full px-8 py-4 text-3xl font-bold backdrop-blur-sm">
         Blogs
       </h1>
-      <div className="flex flex-col items-center justify-start p-8 gap-20 pt-32 pb-32 ">
-        {articles.map(article => {
+      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-32 pb-32 ">
+        {articles.map((article, i) => {
           const { title, author, image, likes, _id } = article;
           return (
             <Link
               to={`/articles/${_id}`}
               key={_id}
-              className=" h-[30vh] rounded-[2.5rem] w-[85vw] flex flex-col justify-end items-start text-white font-bold overflow-hidden transition-all hover:ring-4 ring-gray-500 "
+              className=" h-[30vh] rounded-[2.5rem] w-[85vw] flex flex-col justify-end items-start text-white font-bold overflow-hidden transition-all hover:ring-4 ring-gray-500 animate-revealPage opacity-0"
               style={{
                 backgroundImage: `url(${image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
+                animationDelay: `${i * 0.1}s`,
               }}
             >
               <div className="p-4 bg-[#00000055] w-full h-full relative">
-                <h1 className="text-white text-3xl p-4 ">{title}</h1>
-                <p className="text-white text-xl absolute bottom-8 left-12 p-2 ">{`${author.firstName} ${author.lastName}`}</p>
+                <h1 className="p-4 text-3xl text-white ">{title}</h1>
+                <p className="absolute p-2 text-xl text-white bottom-8 left-12 ">{`${author.firstName} ${author.lastName}`}</p>
 
                 <p
                   className="text-white absolute bottom-8 right-12 bg-[#40507855] p-2 rounded-full font-medium px-4 backdrop-blur-3xl"
