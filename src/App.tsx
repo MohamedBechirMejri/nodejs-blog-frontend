@@ -4,6 +4,8 @@ import Home from "./Components/Home";
 import Article from "./Components/Article";
 import NotFound from "./Components/NotFound";
 import Navbar from "./Components/Navbar";
+import Signup from "./Components/Signup";
+import Login from "./Components/Login";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/articles/:id" element={<Article />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Navbar />
