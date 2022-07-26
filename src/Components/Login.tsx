@@ -12,12 +12,12 @@ const Login = () => {
       </h1>
       <input
         type="text"
-        className="w-full p-5 transition-all rounded-lg border-white  "
+        className="w-full p-5 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium"
         placeholder="Enter Username"
       />
       <input
         type="text"
-        className="w-full p-5 transition-all rounded-lg border-white "
+        className="w-full p-5 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium"
         placeholder="Password"
       />
       <button className="w-full p-5 rounded-lg bg-[#F26865] text-white text-xl font-medium shadow-sm shadow-[#F26865] active:bg-[#ca4747] transition-all">
