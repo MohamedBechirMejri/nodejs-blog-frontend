@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import Bookmarks from "./Assets/Bookmark";
 import Home from "./Assets/Home";
@@ -8,7 +8,20 @@ import Profile from "./Assets/Profile";
 import Search from "./Assets/Search";
 
 const Navbar = () => {
-  const [currentTab, setCurrentTab] = React.useState("home");
+  const [currentTab, setCurrentTab] = React.useState("");
+  const location = useLocation();
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === "/") {
+      setCurrentTab("home");
+    } else if (path === "/bookmarks") {
+      setCurrentTab("bookmarks");
+    } else if (path === "/profile") {
+      setCurrentTab("profile");
+    } else {
+      setCurrentTab("");
+    }
+  }, [location.pathname]);
 
   return (
     <nav className="fixed z-50 bottom-2 left-1/2 w-[95%] -translate-x-1/2 h-16 flex items-center justify-center gap-4 p-4 rounded-full bg-[#FAF9FE] text-[#B1B5C8] stroke-[#aaaaaa]">
@@ -24,11 +37,11 @@ const Navbar = () => {
           <Home />
         </Link>
         <Link
-          to="/"
+          to="/bookmarks"
           style={{
             stroke: currentTab === "bookmarks" ? "#6434D1" : "#aaaaaa",
           }}
-          onClick={() => setCurrentTab("bookmarks")}
+          //   onClick={() => setCurrentTab("bookmarks")}
           className="transition-all active:scale-95"
         >
           <Bookmarks />
@@ -54,11 +67,11 @@ const Navbar = () => {
           <Search />
         </Link>
         <Link
-          to="/"
+          to="/profile"
           style={{
             stroke: currentTab === "profile" ? "#6434D1" : "#aaaaaa",
           }}
-          onClick={() => setCurrentTab("profile")}
+          //   onClick={() => setCurrentTab("profile")}
           className="transition-all active:scale-95"
         >
           <Profile />
