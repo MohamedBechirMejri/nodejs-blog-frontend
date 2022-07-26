@@ -24,7 +24,7 @@ const Article = () => {
   }, [id]);
 
   return article ? (
-    <div className="min-h-screen w-screen p-3 flex flex-col items-center justify-start">
+    <div className="flex flex-col items-center justify-start w-screen min-h-screen p-3 opacity-0 animate-revealPage">
       <div
         className=" h-[85vw] rounded-[2rem] w-full text-white font-bold overflow-hidden transition-all fill-white stroke-white relative"
         style={{
@@ -44,7 +44,7 @@ const Article = () => {
           <Bookmark />
         </button>
       </div>
-      <div className="p-4 py-8 w-full h-full flex justify-between items-start">
+      <div className="flex items-start justify-between w-full h-full p-4 py-8">
         <h1 className="text-3xl font-bold">
           <span>{article.title}</span>
         </h1>
@@ -53,15 +53,15 @@ const Article = () => {
         </p>
       </div>
       <hr className="bg-gray-400 w-[90%] rounded-full mb-4" />
-      <div className="flex justify-between items-center w-full px-8 text-sm text-gray-700 font-semibold">
-        <p className=" text-xl p-2 ">{`${article.author.firstName} ${article.author.lastName}`}</p>
-        <p className="p-2 flex gap-4 items-start justify-center">
+      <div className="flex items-center justify-between w-full px-8 text-sm font-semibold text-gray-700">
+        <p className="p-2 text-xl ">{`${article.author.firstName} ${article.author.lastName}`}</p>
+        <p className="flex items-start justify-center gap-4 p-2">
           <span>
             {new Date(article.createdAt).toLocaleString().split(",")[0]}
           </span>
         </p>
       </div>
-      <p className="p-4 w-full text-justify py-8 pb-20">
+      <p className="w-full p-4 py-8 pb-20 text-justify">
         {article.body} Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Ratione aliquam delectus cum maiores, autem sit atque, molestiae nihil
         eveniet excepturi fugiat officiis beatae blanditiis? Libero officia amet
