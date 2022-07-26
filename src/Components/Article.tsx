@@ -44,7 +44,18 @@ const Article = () => {
           {true ? <HeartFull /> : <Heart />} {article.likes.length}
         </p>
       </div>
-      <p className=" text-xl p-2 ">{`${article.author.firstName} ${article.author.lastName}`}</p>
+      <hr className="bg-gray-400 w-[90%] rounded-full mb-4" />
+      <div className="flex justify-between items-center w-full px-8 text-sm text-gray-700 font-semibold">
+        <p className=" text-xl p-2 ">{`${article.author.firstName} ${article.author.lastName}`}</p>
+        <p className="p-2 flex gap-4 items-start justify-center">
+          <span>
+            {new Date(article.createdAt).toLocaleString().split(",")[0]}
+          </span>
+          {/* <span>
+            {new Date(article.createdAt).toLocaleString().split(",")[1]}
+          </span> */}
+        </p>
+      </div>
     </div>
   ) : (
     <div>Loading...</div>
