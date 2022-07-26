@@ -24,7 +24,13 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <nav className="fixed z-50 bottom-2 left-1/2 w-[95%] -translate-x-1/2 h-16 flex items-center justify-center gap-4 p-4 rounded-full bg-[#FAF9FE] text-[#B1B5C8] stroke-[#aaaaaa] animate-reveal">
+    <nav
+      className={`fixed z-50 bottom-2 left-1/2 w-[95%] -translate-x-1/2 h-16 flex items-center justify-center gap-4 p-4 rounded-full bg-[#FAF9FE] text-[#B1B5C8] stroke-[#aaaaaa] ${
+        location.pathname.split("/")[1] === "articles"
+          ? "animate-hide"
+          : "animate-reveal"
+      }`}
+    >
       <div className="flex items-center justify-evenly p-4 gap-8">
         <Link
           to="/"
