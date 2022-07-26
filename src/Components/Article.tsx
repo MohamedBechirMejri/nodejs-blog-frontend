@@ -56,6 +56,25 @@ const Article = () => {
           </span> */}
         </p>
       </div>
+      <p className="p-4 w-full text-justify py-8 pb-20">
+        {article.body} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Ratione aliquam delectus cum maiores, autem sit atque, molestiae nihil
+        eveniet excepturi fugiat officiis beatae blanditiis? Libero officia amet
+        deleniti consequuntur impedit. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ratione aliquam delectus cum maiores, autem sit atque,
+        molestiae nihil eveniet excepturi fugiat officiis beatae blanditiis?
+        Libero officia amet deleniti consequuntur impedit. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Ratione aliquam delectus cum maiores,
+        autem sit atque, molestiae nihil eveniet excepturi fugiat officiis
+        beatae blanditiis? Libero officia amet deleniti consequuntur impedit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquam
+        delectus cum maiores, autem sit atque, molestiae nihil eveniet excepturi
+        fugiat officiis beatae blanditiis? Libero officia amet deleniti
+        consequuntur impedit. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Ratione aliquam delectus cum maiores, autem sit atque, molestiae
+        nihil eveniet excepturi fugiat officiis beatae blanditiis? Libero
+        officia amet deleniti consequuntur impedit.
+      </p>
     </div>
   ) : (
     <div>Loading...</div>
