@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import ArticleType from "../Types/Article";
 import Heart from "./Assets/Heart";
 import HeartFull from "./Assets/HeartFull";
@@ -9,14 +9,13 @@ import Bookmark from "./Assets/Bookmark";
 
 const Article = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [article, setArticle] = React.useState(null as ArticleType | null);
   React.useEffect(() => {
     axios
       .get(`http://localhost:3000/articles/${id}`)
       .then(response => {
-        console.log(response.data);
-
         setArticle(response.data);
       })
       .catch(error => {
@@ -35,7 +34,10 @@ const Article = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <button className="absolute top-8 left-8 bg-[#ffffff55] p-3 rounded-full backdrop-blur-sm transition-all active:scale-95">
+        <button
+          className="absolute top-8 left-8 bg-[#ffffff55] p-3 rounded-full backdrop-blur-sm transition-all active:scale-95"
+          onClick={() => navigate(-1)}
+        >
           <Back />
         </button>
         <button className="absolute top-8 right-8 bg-[#ffffff55] p-3 rounded-full backdrop-blur-sm transition-all active:scale-95">
