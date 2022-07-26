@@ -26,16 +26,17 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed z-50 bottom-2 left-1/2 w-[95%] -translate-x-1/2 h-16 flex items-center justify-center gap-4 p-4 rounded-full bg-[#FAF9FE] text-[#B1B5C8] stroke-[#aaaaaa] ${
-        location.pathname.split("/")[1] === "articles"
+        location.pathname.split("/")[1] === "articles" ||
+        location.pathname.split("/")[1] === "signup"
           ? "animate-hide"
           : "animate-reveal"
       }`}
     >
-      <div className="flex items-center justify-evenly p-4 gap-8">
+      <div className="flex items-center gap-8 p-4 justify-evenly">
         <Link
           to="/"
           style={{
-            stroke: currentTab === "home" ? "#6434D1" : "#aaaaaa",
+            stroke: currentTab === "home"  ? "#6434D1" : "#aaaaaa",
           }}
           onClick={() => setCurrentTab("home")}
           className="transition-all active:scale-95"
@@ -57,11 +58,11 @@ const Navbar = () => {
         to="/"
         className="bg-red-500 p-8 rounded-full relative -translate-y-6 bg-gradient-to-br from-[#FF9271] to-[#FF7695] text-white font-bold hover:ring ring-[#FFEBED] transition-all active:scale-90"
       >
-        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 stroke-white">
+        <p className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 stroke-white">
           <Plus />
         </p>
       </Link>
-      <div className="flex items-center justify-evenly p-4 gap-8">
+      <div className="flex items-center gap-8 p-4 justify-evenly">
         <Link
           to="/"
           style={{
