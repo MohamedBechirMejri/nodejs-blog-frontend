@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <form className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8">
+    <form className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 animate-revealPage">
       <h1 className="text-3xl font-medium text-center">
         Hello Again! <br />
         <span className="text-lg font-light">
