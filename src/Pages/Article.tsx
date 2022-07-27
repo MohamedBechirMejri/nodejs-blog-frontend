@@ -8,6 +8,7 @@ import Back from "../Components/Assets/Back";
 import Bookmark from "../Components/Assets/Bookmark";
 import Loader from "../Components/Loader";
 import { toast } from "react-toastify";
+import Comments from "../Components/Comments";
 
 const Article = () => {
   const { id } = useParams();
@@ -184,9 +185,9 @@ const Article = () => {
         nihil eveniet excepturi fugiat officiis beatae blanditiis? Libero
         officia amet deleniti consequuntur impedit.
       </p>
-      <button className="w-full p-4 mb-12 font-bold text-purple-500 transition-all bg-purple-200 rounded-full text-md active:scale-95">
+      {/* <button className="w-full p-4 mb-12 font-bold text-purple-500 transition-all bg-purple-200 rounded-full text-md active:scale-95">
         Show Comments
-      </button>
+      </button>  */}
       {`"${article.author._id}"` === uid && (
         <div className="flex items-center w-full gap-4 px-4 justify-evenly">
           <Link to={`/articles/${id}/edit`} className="w-full">
@@ -201,6 +202,7 @@ const Article = () => {
           </Link>
         </div>
       )}
+      <Comments className="animate-revealPage" Comments={article.comments} />
     </div>
   ) : (
     <Loader />
