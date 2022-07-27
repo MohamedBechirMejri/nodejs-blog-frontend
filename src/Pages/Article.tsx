@@ -126,6 +126,11 @@ const Article = () => {
           {isliked ? <HeartFull /> : <Heart />} {article.likes.length}
         </button>
       </div>
+      {!article.isPublished && (
+        <button className="w-full p-4 mb-12 font-bold text-green-500 transition-all bg-green-200 rounded-full text-md active:scale-95">
+          Publish
+        </button>
+      )}
       <hr className="bg-gray-400 w-[90%] rounded-full mb-4" />
       <div className="flex items-center justify-between w-full px-8 text-sm font-semibold text-gray-700">
         <p className="p-2 text-xl ">{`${article.author.firstName} ${article.author.lastName}`}</p>
