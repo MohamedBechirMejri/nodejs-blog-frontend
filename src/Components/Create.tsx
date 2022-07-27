@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Create = () => {
   const [categories, setCategories] = React.useState(
@@ -8,27 +9,15 @@ const Create = () => {
       name: string;
     }[]
   );
+  const navigate = useNavigate();
+
   useEffect(() => {
-    const cats = [
-      {
-        _id: 1,
-        name: "Technology",
-      },
-      {
-        _id: 2,
-        name: "Business",
-      },
-      {
-        _id: 3,
-        name: "Entertainment",
-      },
-      {
-        _id: 4,
-        name: "General",
-      },
-    ];
-    setCategories(cats);
-  }, []);
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   return (
     <form className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 pb-32 animate-revealPage">
