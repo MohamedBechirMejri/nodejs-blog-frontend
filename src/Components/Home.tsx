@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div className="">
-      <h1 className="fixed top-0 left-0 z-50 w-full px-8 py-4 text-3xl font-bold backdrop-blur-sm">
+      <h1 className="fixed top-0 left-0 z-50 w-full px-8 py-4 text-3xl font-bold opacity-0 backdrop-blur-sm animate-revealLogo">
         Blogs
       </h1>
       <div className="flex flex-col items-center justify-start gap-20 p-8 pt-32 pb-32 ">
@@ -35,17 +35,15 @@ const Home = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                animationDelay: `${i * 0.1}s`,
+                animationDelay: `${(i + 1) * 0.1}s`,
               }}
             >
               <div className="p-4 bg-[#00000055] w-full h-full relative">
                 <h1 className="p-4 text-3xl text-white ">{title}</h1>
                 <p className="absolute p-2 text-xl text-white bottom-8 left-12 ">{`${author.firstName} ${author.lastName}`}</p>
 
-                <p
-                  className="text-white absolute bottom-8 right-12 bg-[#40507855] p-2 rounded-full font-medium px-4 backdrop-blur-3xl stroke-current flex items-center justify-center gap-4"
-                >
-                <Heart/>  {likes.length}
+                <p className="text-white absolute bottom-8 right-12 bg-[#40507855] p-2 rounded-full font-medium px-4 backdrop-blur-3xl stroke-current flex items-center justify-center gap-4">
+                  <Heart /> {likes.length}
                 </p>
               </div>
             </Link>
