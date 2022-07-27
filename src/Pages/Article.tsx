@@ -7,6 +7,7 @@ import HeartFull from "../Components/Assets/HeartFull";
 import Back from "../Components/Assets/Back";
 import Bookmark from "../Components/Assets/Bookmark";
 import Loader from "../Components/Loader";
+import { toast } from "react-toastify";
 
 const Article = () => {
   const { id } = useParams();
@@ -14,6 +15,7 @@ const Article = () => {
   const [token, setToken] = React.useState<string | null>(null);
   const [article, setArticle] = React.useState(null as ArticleType | null);
   const uid = localStorage.getItem("uid");
+  const [isliked, setIsLiked] = React.useState(false);
 
   React.useEffect(() => {
     const token = localStorage.getItem("token");
@@ -31,6 +33,42 @@ const Article = () => {
         navigate("/login");
       });
   }, [id, navigate]);
+
+  React.useEffect(() => {
+    setIsLiked(false);
+    if (uid) {
+      const likes = article?.likes;
+      if (likes) {
+        likes.forEach(like => {
+          like = `"${like}"`;
+          if (like === uid) {
+            setIsLiked(true);
+          }
+        });
+      }
+    }
+  }, [article?.likes, uid]);
+
+  const handleLike = () => {
+    if (token) {
+      axios
+        .post(
+          `http://localhost:3000/articles/${id}/like`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then(res => {
+          setArticle(res.data);
+        })
+        .catch(err => {
+          toast.error(err.response.data.msg, {});
+        });
+    }
+  };
 
   return article ? (
     <div className="flex flex-col items-center justify-start w-screen min-h-screen p-3 opacity-0 animate-revealPage">
@@ -57,10 +95,12 @@ const Article = () => {
         <h1 className="text-3xl font-bold">
           <span>{article.title}</span>
         </h1>
-        <p className="w-max bg-[#ca505055] text-sm p-2 rounded-full font-medium px-4 backdrop-blur-3xl min-w-max flex gap-2 items-center  justify-center text-[#ca5050] stroke-current fill-current active:scale-90 transition-all">
-          {uid && article.likes.includes(uid) ? <HeartFull /> : <Heart />}{" "}
-          {article.likes.length}
-        </p>
+        <button
+          className="w-max bg-[#ca505055] text-sm p-2 rounded-full font-medium px-4 backdrop-blur-3xl min-w-max flex gap-2 items-center  justify-center text-[#ca5050] stroke-current fill-current active:scale-90 transition-all"
+          onClick={handleLike}
+        >
+          {isliked ? <HeartFull /> : <Heart />} {article.likes.length}
+        </button>
       </div>
       <hr className="bg-gray-400 w-[90%] rounded-full mb-4" />
       <div className="flex items-center justify-between w-full px-8 text-sm font-semibold text-gray-700">
