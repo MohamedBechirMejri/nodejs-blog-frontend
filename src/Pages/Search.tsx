@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ArticleType from "../Types/Article";
 import Heart from "../Components/Assets/Heart";
 import Loader from "../Components/Loader";
+import { DebounceInput } from "react-debounce-input";
 
 const Search = () => {
   const [articles, setArticles] = React.useState([] as ArticleType[]);
@@ -46,11 +47,13 @@ const Search = () => {
           </button>
         </div> */}
       </div>
-      <input
+      <DebounceInput
         type="text"
         className="w-full px-5 p-4 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium text-center"
         placeholder="Search"
         required
+        minLength={2}
+        debounceTimeout={300}
         onChange={e => {
           const title = e.target.value;
           axios
