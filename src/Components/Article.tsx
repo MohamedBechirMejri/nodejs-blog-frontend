@@ -11,18 +11,24 @@ import Loader from "./Loader";
 const Article = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
+  const [token, setToken] = React.useState("");
   const [article, setArticle] = React.useState(null as ArticleType | null);
+
   React.useEffect(() => {
+    const token = localStorage.getItem("token");
     axios
-      .get(`http://localhost:3000/articles/${id}`)
-      .then(response => {
-        setArticle(response.data);
+      .get(`http://localhost:3000/articles/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
-      .catch(error => {
-        <Navigate to="/login" />;
+      .then(res => {
+        setArticle(res.data);
+      })
+      .catch(err => {
+        navigate("/login");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   return article ? (
     <div className="flex flex-col items-center justify-start w-screen min-h-screen p-3 opacity-0 animate-revealPage">
