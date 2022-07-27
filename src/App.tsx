@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+
 import Home from "./Components/Home";
 import Article from "./Components/Article";
 import NotFound from "./Components/NotFound";
@@ -12,6 +15,17 @@ import Search from "./Components/Search";
 function App() {
   return (
     <div className="App">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
