@@ -18,6 +18,8 @@ const Navbar = () => {
       setCurrentTab("bookmarks");
     } else if (path === "/profile") {
       setCurrentTab("profile");
+    } else if (path === "/search") {
+      setCurrentTab("search");
     } else {
       setCurrentTab("");
     }
@@ -36,7 +38,7 @@ const Navbar = () => {
         <Link
           to="/"
           style={{
-            stroke: currentTab === "home"  ? "#6434D1" : "#aaaaaa",
+            stroke: currentTab === "home" ? "#6434D1" : "#aaaaaa",
           }}
           onClick={() => setCurrentTab("home")}
           className="transition-all active:scale-95"
@@ -64,11 +66,11 @@ const Navbar = () => {
       </Link>
       <div className="flex items-center gap-8 p-4 justify-evenly">
         <Link
-          to="/"
+          to="/search"
           style={{
             stroke: currentTab === "search" ? "#6434D1" : "#aaaaaa",
           }}
-          onClick={() => setCurrentTab("search")}
+          // onClick={() => setCurrentTab("search")}
           className="transition-all active:scale-95"
         >
           <Search />
