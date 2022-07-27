@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import ArticleType from "../Types/Article";
 import Heart from "../Components/Assets/Heart";
 import HeartFull from "../Components/Assets/HeartFull";
@@ -162,6 +162,20 @@ const Article = () => {
       <button className="w-full p-4 mb-12 font-bold text-purple-500 transition-all bg-purple-200 rounded-full text-md active:scale-95">
         Show Comments
       </button>
+      {`"${article.author._id}"` === uid && (
+        <div className="flex items-center w-full gap-4 px-4 justify-evenly">
+          <Link to={`/articles/${id}/edit`} className="w-full">
+            <button className="w-full p-4 mb-12 font-bold text-blue-500 transition-all bg-blue-200 rounded-full text-md active:scale-95">
+              Edit
+            </button>
+          </Link>
+          <Link to={`/articles/${id}/delete`} className="w-full">
+            <button className="w-full p-4 mb-12 font-bold text-red-500 transition-all bg-red-200 rounded-full text-md active:scale-95">
+              Delete !!!
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   ) : (
     <Loader />
