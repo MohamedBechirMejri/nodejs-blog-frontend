@@ -86,9 +86,7 @@ const Article = () => {
       </button>
     </div>
   ) : (
-    <div className="flex flex-col items-center justify-center w-screen h-screen ">
-      <Loader />
-    </div>
+    <Loader />
   );
 };
 
