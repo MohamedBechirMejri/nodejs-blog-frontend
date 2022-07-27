@@ -11,6 +11,7 @@ import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Create from "./Pages/Create";
 import Search from "./Pages/Search";
+import Bookmarks from "./Pages/Bookmarks";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="/search" element={<Search />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/bookmarks" element={<Bookmarks />}></Route>
+          {/* <Route path="/profile" element={<Profile />}></Route> */}
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Navbar />
