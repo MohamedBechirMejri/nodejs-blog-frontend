@@ -23,7 +23,7 @@ const Home = () => {
       <h1 className="fixed top-0 left-0 z-50 w-full px-8 py-4 text-3xl font-bold opacity-0 backdrop-blur-sm animate-revealLogo">
         Blogs
       </h1>
-      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-32 pb-32 ">
+      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-20 pb-32 ">
         {articles.length === 0 ? (
           <Loader />
         ) : (
