@@ -202,7 +202,11 @@ const Article = () => {
           </Link>
         </div>
       )}
-      <Comments className="animate-revealPage" Comments={article.comments} />
+      <Comments
+        className="animate-revealPage"
+        Comments={article.comments}
+        setArticle={setArticle}
+      />
     </div>
   ) : (
     <Loader />
