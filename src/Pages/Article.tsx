@@ -70,6 +70,27 @@ const Article = () => {
     }
   };
 
+  const handleBookmark = () => {
+    if (token) {
+      axios
+        .post(
+          `http://localhost:3000/articles/${id}/bookmark`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then(res => {
+          toast.success(res.data, {});
+        })
+        .catch(err => {
+          toast.error(err.response.data.msg, {});
+        });
+    }
+  };
+
   return article ? (
     <div className="flex flex-col items-center justify-start w-screen min-h-screen p-3 opacity-0 animate-revealPage">
       <div
@@ -87,7 +108,10 @@ const Article = () => {
         >
           <Back />
         </button>
-        <button className="absolute top-8 right-8 bg-[#00000055] p-3 rounded-full backdrop-blur-3xl transition-all active:scale-95">
+        <button
+          className="absolute top-8 right-8 bg-[#00000055] p-3 rounded-full backdrop-blur-3xl transition-all active:scale-95"
+          onClick={handleBookmark}
+        >
           <Bookmark />
         </button>
       </div>
