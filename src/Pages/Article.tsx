@@ -91,6 +91,28 @@ const Article = () => {
     }
   };
 
+  const handlePublish = () => {
+    if (token) {
+      axios
+        .post(
+          `http://localhost:3000/articles/${id}/publish`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then(res => {
+          toast.success("Published");
+          setArticle(res.data);
+        })
+        .catch(err => {
+          toast.error(err.response.data.msg, {});
+        });
+    }
+  };
+
   return article ? (
     <div className="flex flex-col items-center justify-start w-screen min-h-screen p-3 opacity-0 animate-revealPage">
       <div
@@ -127,7 +149,10 @@ const Article = () => {
         </button>
       </div>
       {!article.isPublished && (
-        <button className="w-full p-4 mb-12 font-bold text-green-500 transition-all bg-green-200 rounded-full text-md active:scale-95">
+        <button
+          className="w-full p-4 mb-12 font-bold text-green-500 transition-all bg-green-200 rounded-full text-md active:scale-95"
+          onClick={handlePublish}
+        >
           Publish
         </button>
       )}
