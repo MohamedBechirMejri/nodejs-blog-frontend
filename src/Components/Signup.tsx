@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -11,6 +11,15 @@ const Signup = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [passwordConfirmation, setPasswordConfirmation] = React.useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      toast.error("Already Logged In!");
+      navigate("/");
+    }
+  }, [navigate]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,14 +38,14 @@ const Signup = () => {
       .catch(error => {
         error.response.data.forEach((err: { msg: string }) => {
           toast.error(err.msg, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
+            // position: "top-right",
+            // autoClose: 5000,
+            // hideProgressBar: false,
+            // closeOnClick: true,
+            // pauseOnHover: true,
+            // draggable: true,
+            // progress: undefined,
+            // theme: "colored",
           });
         });
       });
