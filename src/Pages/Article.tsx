@@ -44,12 +44,12 @@ const Article = () => {
         }}
       >
         <button
-          className="absolute top-8 left-8 bg-[#ffffff55] p-3 rounded-full backdrop-blur-sm transition-all active:scale-95"
+          className="absolute top-8 left-8 bg-[#00000055] p-3 rounded-full backdrop-blur-3xl transition-all active:scale-95"
           onClick={() => navigate(-1)}
         >
           <Back />
         </button>
-        <button className="absolute top-8 right-8 bg-[#ffffff55] p-3 rounded-full backdrop-blur-sm transition-all active:scale-95">
+        <button className="absolute top-8 right-8 bg-[#00000055] p-3 rounded-full backdrop-blur-3xl transition-all active:scale-95">
           <Bookmark />
         </button>
       </div>
