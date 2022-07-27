@@ -2,11 +2,11 @@ import axios from "axios";
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ArticleType from "../Types/Article";
-import Heart from "./Assets/Heart";
-import HeartFull from "./Assets/HeartFull";
-import Back from "./Assets/Back";
-import Bookmark from "./Assets/Bookmark";
-import Loader from "./Loader";
+import Heart from "../Components/Assets/Heart";
+import HeartFull from "../Components/Assets/HeartFull";
+import Back from "../Components/Assets/Back";
+import Bookmark from "../Components/Assets/Bookmark";
+import Loader from "../Components/Loader";
 
 const Article = () => {
   const { id } = useParams();

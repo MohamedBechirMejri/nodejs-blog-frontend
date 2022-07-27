@@ -3,14 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
-import Home from "./Components/Home";
-import Article from "./Components/Article";
-import NotFound from "./Components/NotFound";
+import Home from "./Pages/Home";
+import Article from "./Pages/Article";
+import NotFound from "./Pages/NotFound";
 import Navbar from "./Components/Navbar";
-import Signup from "./Components/Signup";
-import Login from "./Components/Login";
-import Create from "./Components/Create";
-import Search from "./Components/Search";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
+import Create from "./Pages/Create";
+import Search from "./Pages/Search";
 
 function App() {
   return (

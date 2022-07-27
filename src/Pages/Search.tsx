@@ -2,11 +2,12 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import ArticleType from "../Types/Article";
-import Heart from "./Assets/Heart";
-import Loader from "./Loader";
+import Heart from "../Components/Assets/Heart";
+import Loader from "../Components/Loader";
 
-const Home = () => {
+const Search = () => {
   const [articles, setArticles] = React.useState([] as ArticleType[]);
+  const [searchBy, setSearchBy] = React.useState("author");
   React.useEffect(() => {
     axios
       .get("http://localhost:3000/articles")
@@ -19,11 +20,39 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="">
-      <h1 className="fixed top-0 left-0 z-50 w-full px-8 py-4 text-3xl font-bold opacity-0 backdrop-blur-sm animate-revealLogo">
-        Blogs
-      </h1>
-      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-32 pb-32 ">
+    <div className="p-8">
+      <div className="pb-8">
+        <h1 className="pb-8 text-3xl font-bold">Search</h1>
+        <div className="flex items-center w-full justify-evenly">
+          <button
+            className="p-4 font-bold bg-white border rounded-xl text-[#F26865] border-[#F26865] transition-all active:scale-95"
+            style={{
+              backgroundColor: searchBy === "title" ? "#F26865" : "#fff",
+              color: searchBy === "title" ? "#fff" : "#F26865",
+            }}
+            onClick={() => setSearchBy("title")}
+          >
+            By Title
+          </button>
+          <button
+            className="p-4 font-bold bg-white border rounded-xl text-[#F26865] border-[#F26865] transition-all active:scale-95"
+            style={{
+              backgroundColor: searchBy === "author" ? "#F26865" : "#fff",
+              color: searchBy === "author" ? "#fff" : "#F26865",
+            }}
+            onClick={() => setSearchBy("author")}
+          >
+            By Author
+          </button>
+        </div>
+      </div>
+      <input
+        type="text"
+        className="w-full px-5 p-4 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium text-center"
+        placeholder="Search"
+        required
+      />
+      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-8 pb-32 ">
         {articles.length === 0 ? (
           <Loader />
         ) : (
@@ -59,4 +88,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Search;
