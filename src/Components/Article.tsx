@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useParams, Navigate, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ArticleType from "../Types/Article";
 import Heart from "./Assets/Heart";
 import HeartFull from "./Assets/HeartFull";
@@ -11,11 +11,12 @@ import Loader from "./Loader";
 const Article = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [token, setToken] = React.useState("");
+  const [token, setToken] = React.useState<string | null>(null);
   const [article, setArticle] = React.useState(null as ArticleType | null);
 
   React.useEffect(() => {
     const token = localStorage.getItem("token");
+    setToken(token);
     axios
       .get(`http://localhost:3000/articles/${id}`, {
         headers: {
