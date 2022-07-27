@@ -55,6 +55,7 @@ const Signup = () => {
     <form
       className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 animate-revealPage"
       onSubmit={handleSubmit}
+      autoComplete="on"
     >
       <h1 className="text-3xl font-medium text-center">
         Welcome! <br />
@@ -67,6 +68,7 @@ const Signup = () => {
         required
         value={firstName}
         onChange={e => setFirstName(e.target.value)}
+        autoComplete="first-name"
       />
       <input
         type="text"
@@ -75,6 +77,7 @@ const Signup = () => {
         required
         value={lastName}
         onChange={e => setLastName(e.target.value)}
+        autoComplete="last-name"
       />
       <input
         type="email"
@@ -83,6 +86,7 @@ const Signup = () => {
         required
         value={email}
         onChange={e => setEmail(e.target.value)}
+        autoComplete="email"
       />
       <input
         type="password"
@@ -91,6 +95,7 @@ const Signup = () => {
         required
         value={password}
         onChange={e => setPassword(e.target.value)}
+        autoComplete="new-password"
       />
       <input
         type="password"
@@ -99,6 +104,7 @@ const Signup = () => {
         required
         value={passwordConfirmation}
         onChange={e => setPasswordConfirmation(e.target.value)}
+        autoComplete="new-password"
       />
       <button className="w-full p-5 rounded-lg bg-[#F26865] text-white text-xl font-medium shadow-sm shadow-[#F26865] active:bg-[#ca4747] transition-all">
         Sign Up

@@ -55,6 +55,7 @@ const Login = () => {
         required
         value={email}
         onChange={e => setEmail(e.target.value)}
+        autoComplete="email"
       />
       <input
         type="password"
@@ -64,6 +65,7 @@ const Login = () => {
         required
         value={password}
         onChange={e => setPassword(e.target.value)}
+        autoComplete="current-password"
       />
       <button className="w-full p-5 rounded-lg bg-[#F26865] text-white text-xl font-medium shadow-sm shadow-[#F26865] active:bg-[#ca4747] transition-all">
         Sign In
