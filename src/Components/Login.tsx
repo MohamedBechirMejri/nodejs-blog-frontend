@@ -1,9 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      toast.error("Already Logged In!");
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3000/login", {
+        email,
+        password,
+      })
+      .then(response => {
+        toast.success(response.data.message);
+        localStorage.setItem("token", response.data.token);
+        navigate("/");
+      })
+      .catch(error => {
+        toast.error(error.response.data.msg);
+      });
+  };
+
   return (
-    <form className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 animate-revealPage">
+    <form
+      className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 animate-revealPage"
+      autoComplete="on"
+      onSubmit={handleSubmit}
+    >
       <h1 className="text-3xl font-medium text-center">
         Hello Again! <br />
         <span className="text-lg font-light">
@@ -15,6 +52,8 @@ const Login = () => {
         className="w-full p-5 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium"
         placeholder="Enter Email"
         required
+        value={email}
+        onChange={e => setEmail(e.target.value)}
       />
       <input
         type="password"
@@ -22,6 +61,8 @@ const Login = () => {
         minLength={8}
         placeholder="Password"
         required
+        value={password}
+        onChange={e => setPassword(e.target.value)}
       />
       <button className="w-full p-5 rounded-lg bg-[#F26865] text-white text-xl font-medium shadow-sm shadow-[#F26865] active:bg-[#ca4747] transition-all">
         Sign In
