@@ -13,6 +13,7 @@ import Create from "./Pages/Create";
 import Search from "./Pages/Search";
 import Bookmarks from "./Pages/Bookmarks";
 import Profile from "./Pages/Profile";
+import Delete from "./Pages/Delete";
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/articles/:id" element={<Article />}></Route>
+          {/* <Route path="/articles/:id/edit" element={<Edit />}></Route> */}
+          <Route path="/articles/:id/delete" element={<Delete />}></Route>
           <Route path="/create" element={<Create />}></Route>
           <Route path="/search" element={<Search />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
