@@ -57,7 +57,7 @@ const Navbar = () => {
         </Link>
       </div>
       <Link
-        to="/"
+        to="/create"
         className="bg-red-500 p-8 rounded-full relative -translate-y-6 bg-gradient-to-br from-[#FF9271] to-[#FF7695] text-white font-bold hover:ring ring-[#FFEBED] transition-all active:scale-90"
       >
         <p className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 stroke-white">
