@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import ArticleType from "../Types/Article";
+import Heart from "./Assets/Heart";
 
 const Home = () => {
   const [articles, setArticles] = React.useState([] as ArticleType[]);
@@ -42,10 +43,9 @@ const Home = () => {
                 <p className="absolute p-2 text-xl text-white bottom-8 left-12 ">{`${author.firstName} ${author.lastName}`}</p>
 
                 <p
-                  className="text-white absolute bottom-8 right-12 bg-[#40507855] p-2 rounded-full font-medium px-4 backdrop-blur-3xl"
-                  style={{}}
+                  className="text-white absolute bottom-8 right-12 bg-[#40507855] p-2 rounded-full font-medium px-4 backdrop-blur-3xl stroke-current flex items-center justify-center gap-4"
                 >
-                  {likes.length} Likes
+                <Heart/>  {likes.length}
                 </p>
               </div>
             </Link>
