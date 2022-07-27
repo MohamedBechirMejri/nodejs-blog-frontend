@@ -6,6 +6,7 @@ import Heart from "./Assets/Heart";
 import HeartFull from "./Assets/HeartFull";
 import Back from "./Assets/Back";
 import Bookmark from "./Assets/Bookmark";
+import Loader from "./Loader";
 
 const Article = () => {
   const { id } = useParams();
@@ -85,7 +86,9 @@ const Article = () => {
       </button>
     </div>
   ) : (
-    <div>Loading...</div>
+    <div className="flex flex-col items-center justify-center w-screen h-screen ">
+      <Loader />
+    </div>
   );
 };
 
