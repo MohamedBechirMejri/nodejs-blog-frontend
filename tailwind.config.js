@@ -6,6 +6,7 @@ module.exports = {
       animation: {
         reveal: "reveal 0.3s ease-in-out forwards",
         revealPage: "revealPage 0.3s ease-in-out forwards",
+        revealLogo: "revealLogo 0.3s ease-in-out forwards",
         hide: "hide 0.3s ease-in-out forwards",
       },
       keyframes: {
@@ -23,6 +24,16 @@ module.exports = {
           "0%": {
             opacity: 0,
             transform: "translate(0, 10%)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate(0, 0)",
+          },
+        },
+        revealLogo: {
+          "0%": {
+            opacity: 0,
+            transform: "translate(-5%, 0)",
           },
           "100%": {
             opacity: 1,
