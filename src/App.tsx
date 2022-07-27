@@ -12,6 +12,7 @@ import Login from "./Pages/Login";
 import Create from "./Pages/Create";
 import Search from "./Pages/Search";
 import Bookmarks from "./Pages/Bookmarks";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/bookmarks" element={<Bookmarks />}></Route>
-          {/* <Route path="/profile" element={<Profile />}></Route> */}
+          <Route path="/profile" element={<Profile />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Navbar />
