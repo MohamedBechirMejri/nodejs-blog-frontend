@@ -8,8 +8,14 @@ module.exports = {
         revealPage: "revealPage 0.3s ease-in-out forwards",
         revealLogo: "revealLogo 0.3s ease-in-out forwards",
         hide: "hide 0.3s ease-in-out forwards",
+        bounce2: "bounce2 .75s infinite ",
       },
       keyframes: {
+        bounce2: {
+          "30%": {
+            transform: "translate(0, 100%) scaleY(0.7)",
+          },
+        },
         reveal: {
           "0%": {
             opacity: 0,
