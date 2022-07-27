@@ -17,7 +17,6 @@ const Bookmarks = () => {
             Authorization: `Bearer ${token}`,
           },
         })
-
         .then(res => {
           setArticles(res.data.bookmarks);
         })
@@ -53,7 +52,7 @@ const Bookmarks = () => {
               >
                 <div className="p-4 bg-[#00000055] w-full h-full relative">
                   <h1 className="p-4 text-3xl text-white ">{title}</h1>
-                  <p className="absolute p-2 text-xl text-white bottom-8 left-12 ">{`${author.firstName} ${author.lastName}`}</p>
+                  {/*<p className="absolute p-2 text-xl text-white bottom-8 left-12 ">{`${author.firstName} ${author.lastName}`}</p>*/}
 
                   <p className="text-white absolute bottom-8 right-12 bg-[#40507855] p-2 rounded-full font-medium px-4 backdrop-blur-3xl stroke-current flex items-center justify-center gap-4">
                     <Heart /> {likes.length}
