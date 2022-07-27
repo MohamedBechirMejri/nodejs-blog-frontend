@@ -171,7 +171,7 @@ const Article = () => {
           </Link>
           <Link to={`/articles/${id}/delete`} className="w-full">
             <button className="w-full p-4 mb-12 font-bold text-red-500 transition-all bg-red-200 rounded-full text-md active:scale-95">
-              Delete !!!
+              Delete
             </button>
           </Link>
         </div>
