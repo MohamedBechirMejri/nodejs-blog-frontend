@@ -16,6 +16,15 @@ const Create = () => {
 
     if (!token) {
       navigate("/login");
+    } else {
+      axios
+        .get("http://localhost:3000/categories")
+        .then(response => {
+          setCategories(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }, [navigate]);
 
