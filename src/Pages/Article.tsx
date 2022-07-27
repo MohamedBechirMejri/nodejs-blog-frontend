@@ -13,6 +13,7 @@ const Article = () => {
   const navigate = useNavigate();
   const [token, setToken] = React.useState<string | null>(null);
   const [article, setArticle] = React.useState(null as ArticleType | null);
+  const uid = localStorage.getItem("uid");
 
   React.useEffect(() => {
     const token = localStorage.getItem("token");
@@ -57,7 +58,8 @@ const Article = () => {
           <span>{article.title}</span>
         </h1>
         <p className="w-max bg-[#ca505055] text-sm p-2 rounded-full font-medium px-4 backdrop-blur-3xl min-w-max flex gap-2 items-center  justify-center text-[#ca5050] stroke-current fill-current active:scale-90 transition-all">
-          {true ? <HeartFull /> : <Heart />} {article.likes.length}
+          {uid && article.likes.includes(uid) ? <HeartFull /> : <Heart />}{" "}
+          {article.likes.length}
         </p>
       </div>
       <hr className="bg-gray-400 w-[90%] rounded-full mb-4" />
