@@ -61,7 +61,7 @@ const Comments = ({
         return (
           <div
             key={_id}
-            className="flex items-center justify-start w-full pt-8"
+            className="flex items-center justify-start w-full gap-4 pt-8"
           >
             <div className="flex flex-col items-center justify-center gap-2 pr-4 font-bold min-w-max">
               <img
@@ -69,7 +69,9 @@ const Comments = ({
                 alt="user"
                 className="w-12 h-12 rounded-full ring ring-[#F26865]"
               />
-              <h2>{`${user.firstName} ${user.lastName}`} </h2>
+              <h2 className="flex flex-col items-center justify-center">
+                <span>{user.firstName}</span> <span>{user.lastName} </span>
+              </h2>
             </div>
             <p>{body}</p>
           </div>
