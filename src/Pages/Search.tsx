@@ -7,7 +7,7 @@ import Loader from "../Components/Loader";
 
 const Search = () => {
   const [articles, setArticles] = React.useState([] as ArticleType[]);
-  const [searchBy, setSearchBy] = React.useState("author");
+  // const [searchBy, setSearchBy] = React.useState("author");
   React.useEffect(() => {
     axios
       .get("http://localhost:3000/articles")
@@ -20,10 +20,10 @@ const Search = () => {
   }, []);
 
   return (
-    <div className="p-8">
+    <div className="px-8">
       <div className="pb-8">
-        <h1 className="pb-8 text-3xl font-bold">Search</h1>
-        <div className="flex items-center w-full justify-evenly">
+        {/* <h1 className="pb-8 text-3xl font-bold">Search</h1> */}
+        {/* <div className="flex items-center w-full justify-evenly">
           <button
             className="p-4 font-bold bg-white border rounded-xl text-[#F26865] border-[#F26865] transition-all active:scale-95"
             style={{
@@ -44,13 +44,21 @@ const Search = () => {
           >
             By Author
           </button>
-        </div>
+        </div> */}
       </div>
       <input
         type="text"
         className="w-full px-5 p-4 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium text-center"
         placeholder="Search"
         required
+        onChange={e => {
+          const title = e.target.value;
+          axios
+            .get(`http://localhost:3000/articles?title=${title}`)
+            .then(res => {
+              setArticles(res.data);
+            });
+        }}
       />
       <div className="flex flex-col items-center justify-start gap-20 p-8 pt-8 pb-32 ">
         {articles.length === 0 ? (
