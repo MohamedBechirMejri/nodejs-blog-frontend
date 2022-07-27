@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ArticleType from "../Types/Article";
 import Heart from "../Components/Assets/Heart";
 import Loader from "../Components/Loader";
@@ -8,8 +8,10 @@ import Loader from "../Components/Loader";
 const Bookmarks = () => {
   const [articles, setArticles] = React.useState([] as ArticleType[]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const navigate = useNavigate();
   React.useEffect(() => {
     const token = localStorage.getItem("token");
+
     if (token) {
       axios
         .get("http://localhost:3000/profile", {
@@ -24,8 +26,10 @@ const Bookmarks = () => {
         .catch(err => {
           console.log(err);
         });
+    } else {
+      navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
   return isLoading ? (
     <Loader />
