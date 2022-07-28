@@ -125,8 +125,17 @@ const Edit = () => {
           </option>
         ))}
       </select>
-      <button className="w-full p-5 rounded-lg bg-[#F26865] text-white text-xl font-medium shadow-sm shadow-[#F26865] active:bg-[#ca4747] transition-all">
+      <button className="w-full p-5 rounded-lg bg-[#F26865] text-white text-xl font-bold shadow-sm shadow-[#F26865] active:bg-[#ca4747] transition-all ring ring-white">
         Submit
+      </button>
+      <button
+        className="w-full p-5 rounded-lg bg-white text-[#F26865] text-xl font-bold shadow-sm ring-[#F26865] ring transition-all active:bg-[#F26865] active:text-white"
+        onClick={e => {
+          e.preventDefault();
+          navigate(-1);
+        }}
+      >
+        Back
       </button>
     </form>
   );
