@@ -21,7 +21,7 @@ const Search = () => {
   }, []);
 
   return (
-    <div className="px-8">
+    <div className="px-8 max-w-[800px] m-auto">
       <div className="pb-8">
         {/* <h1 className="pb-8 text-3xl font-bold">Search</h1> */}
         {/* <div className="flex items-center w-full justify-evenly">
@@ -63,7 +63,7 @@ const Search = () => {
             });
         }}
       />
-      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-8 pb-32 ">
+      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-8 pb-32 xl:gap-4 ">
         {articles.length === 0 ? (
           <Loader />
         ) : (
@@ -73,7 +73,7 @@ const Search = () => {
               <Link
                 to={`/articles/${_id}`}
                 key={_id}
-                className=" h-[30vh] rounded-[2.5rem] w-[85vw] flex flex-col justify-end items-start text-white font-bold overflow-hidden transition-all hover:ring-4 ring-gray-500 animate-revealPage opacity-0"
+                className=" h-[30vh] rounded-[2.5rem] w-[85vw] flex flex-col justify-end items-start text-white font-bold overflow-hidden transition-all hover:ring-4 ring-gray-500 animate-revealPage opacity-0 xl:w-full xl:h-20 xl:rounded-lg"
                 style={{
                   backgroundImage: `url(${image})`,
                   backgroundSize: "cover",
