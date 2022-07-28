@@ -64,7 +64,7 @@ const Create = () => {
 
   return (
     <form
-      className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 pb-32 animate-revealPage"
+      className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 pb-32 animate-revealPage max-w-[800px] m-auto"
       onSubmit={handleSubmit}
     >
       <h1 className="text-3xl font-medium text-center">
