@@ -1,4 +1,16 @@
 [[redirects]]
-  from = "/*"
+  from = "/articles/*"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/login"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/signup"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/create"
   to = "/index.html"
   status = 200
