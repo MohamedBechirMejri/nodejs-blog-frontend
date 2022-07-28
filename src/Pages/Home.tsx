@@ -9,7 +9,7 @@ const Home = () => {
   const [articles, setArticles] = React.useState([] as ArticleType[]);
   React.useEffect(() => {
     axios
-      .get("http://localhost:3000/articles")
+      .get("https://evening-refuge-13847.herokuapp.com/articles")
       .then(response => {
         setArticles(response.data);
       })

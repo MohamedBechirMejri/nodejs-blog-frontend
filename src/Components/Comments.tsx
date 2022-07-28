@@ -24,7 +24,7 @@ const Comments = ({
     if (token) {
       axios
         .post(
-          `http://localhost:3000/articles/${id}/comment`,
+          `https://evening-refuge-13847.herokuapp.com/articles/${id}/comment`,
           {
             body: comment,
           },

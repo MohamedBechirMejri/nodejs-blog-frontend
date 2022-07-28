@@ -15,7 +15,7 @@ const Delete = () => {
     const token = localStorage.getItem("token");
     setToken(token);
     axios
-      .get(`http://localhost:3000/articles/${id}`, {
+      .get(`https://evening-refuge-13847.herokuapp.com/articles/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -50,11 +50,14 @@ const Delete = () => {
           className="w-full p-4 font-bold text-red-500 transition-all bg-red-200 rounded-full text-md active:scale-95"
           onClick={() => {
             axios
-              .delete(`http://localhost:3000/articles/${id}`, {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              })
+              .delete(
+                `https://evening-refuge-13847.herokuapp.com/articles/${id}`,
+                {
+                  headers: {
+                    Authorization: `Bearer ${token}`,
+                  },
+                }
+              )
               .then(res => {
                 toast.success("Article deleted successfully");
                 navigate("/");

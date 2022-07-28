@@ -24,7 +24,7 @@ const Signup = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/signup", {
+      .post("https://evening-refuge-13847.herokuapp.com/signup", {
         firstName,
         lastName,
         email,

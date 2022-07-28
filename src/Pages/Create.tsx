@@ -21,7 +21,7 @@ const Create = () => {
     e.preventDefault();
     axios
       .post(
-        "http://localhost:3000/articles",
+        "https://evening-refuge-13847.herokuapp.com/articles",
         {
           title,
           body,
@@ -52,7 +52,7 @@ const Create = () => {
     } else {
       setToken(token);
       axios
-        .get("http://localhost:3000/categories")
+        .get("https://evening-refuge-13847.herokuapp.com/categories")
         .then(response => {
           setCategories(response.data);
         })

@@ -11,7 +11,7 @@ const Search = () => {
   // const [searchBy, setSearchBy] = React.useState("author");
   React.useEffect(() => {
     axios
-      .get("http://localhost:3000/articles")
+      .get("https://evening-refuge-13847.herokuapp.com/articles")
       .then(response => {
         setArticles(response.data);
       })
@@ -57,7 +57,9 @@ const Search = () => {
         onChange={e => {
           const title = e.target.value;
           axios
-            .get(`http://localhost:3000/articles?title=${title}`)
+            .get(
+              `https://evening-refuge-13847.herokuapp.com/articles?title=${title}`
+            )
             .then(res => {
               setArticles(res.data);
             });

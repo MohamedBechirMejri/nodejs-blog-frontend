@@ -24,7 +24,7 @@ const Edit = () => {
     e.preventDefault();
     axios
       .put(
-        `http://localhost:3000/articles/${id}`,
+        `https://evening-refuge-13847.herokuapp.com/articles/${id}`,
         {
           title,
           body,
@@ -55,17 +55,19 @@ const Edit = () => {
     } else {
       setToken(token);
       axios
-        .get("http://localhost:3000/categories")
+        .get("https://evening-refuge-13847.herokuapp.com/categories")
         .then(response => {
           setCategories(response.data);
 
-          axios.get(`http://localhost:3000/articles/${id}`).then(res => {
-            setTitle(res.data.title);
-            setBody(res.data.body);
-            setCategory(res.data.category._id);
-            setImage(res.data.image);
-            setIsLoading(false);
-          });
+          axios
+            .get(`https://evening-refuge-13847.herokuapp.com/articles/${id}`)
+            .then(res => {
+              setTitle(res.data.title);
+              setBody(res.data.body);
+              setCategory(res.data.category._id);
+              setImage(res.data.image);
+              setIsLoading(false);
+            });
         })
         .catch(error => {
           console.log(error);

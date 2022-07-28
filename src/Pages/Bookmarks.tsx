@@ -14,7 +14,7 @@ const Bookmarks = () => {
 
     if (token) {
       axios
-        .get("http://localhost:3000/profile", {
+        .get("https://evening-refuge-13847.herokuapp.com/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

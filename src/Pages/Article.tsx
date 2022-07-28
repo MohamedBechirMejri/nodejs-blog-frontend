@@ -22,7 +22,7 @@ const Article = () => {
     const token = localStorage.getItem("token");
     setToken(token);
     axios
-      .get(`http://localhost:3000/articles/${id}`, {
+      .get(`https://evening-refuge-13847.herokuapp.com/articles/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -54,7 +54,7 @@ const Article = () => {
     if (token) {
       axios
         .post(
-          `http://localhost:3000/articles/${id}/like`,
+          `https://evening-refuge-13847.herokuapp.com/articles/${id}/like`,
           {},
           {
             headers: {
@@ -75,7 +75,7 @@ const Article = () => {
     if (token) {
       axios
         .post(
-          `http://localhost:3000/articles/${id}/bookmark`,
+          `https://evening-refuge-13847.herokuapp.com/articles/${id}/bookmark`,
           {},
           {
             headers: {
@@ -96,7 +96,7 @@ const Article = () => {
     if (token) {
       axios
         .post(
-          `http://localhost:3000/articles/${id}/publish`,
+          `https://evening-refuge-13847.herokuapp.com/articles/${id}/publish`,
           {},
           {
             headers: {
