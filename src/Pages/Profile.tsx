@@ -40,12 +40,12 @@ const Profile = () => {
   };
 
   return user ? (
-    <div className="flex flex-col items-center justify-center w-full h-screen gap-4 p-8 text-3xl font-bold">
+    <div className="flex flex-col items-center justify-center w-full h-screen gap-4 p-8 text-3xl font-bold m-auto max-w-[600px]">
       <h1>
         {greeting}, {user.firstName.split(" ")[0]}.
       </h1>
       <p className="text-lg font-light">
-        For Now, the only thing you can do is{" "}
+        For Now, the only thing you can do here is{" "}
       </p>
 
       <button
