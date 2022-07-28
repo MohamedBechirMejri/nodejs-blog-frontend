@@ -115,9 +115,9 @@ const Article = () => {
   };
 
   return article ? (
-    <div className="flex flex-col items-center justify-start w-screen min-h-screen p-3 opacity-0 animate-revealPage">
+    <div className="flex flex-col items-center justify-start w-screen min-h-screen p-3 opacity-0 animate-revealPage max-w-[600px] m-auto">
       <div
-        className=" h-[85vw] rounded-[2rem] w-full text-white font-bold overflow-hidden transition-all fill-white stroke-white relative"
+        className=" h-[90vw] max-h-[600px]  rounded-[2rem] w-full text-white font-bold overflow-hidden transition-all fill-white stroke-white relative"
         style={{
           backgroundImage: `url(${article.image})`,
           backgroundSize: "cover",
