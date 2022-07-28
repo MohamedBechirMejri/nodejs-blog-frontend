@@ -166,24 +166,8 @@ const Article = () => {
           </span>
         </p>
       </div>
-      <p className="w-full p-4 py-8 text-justify">
-        {article.body} Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Ratione aliquam delectus cum maiores, autem sit atque, molestiae nihil
-        eveniet excepturi fugiat officiis beatae blanditiis? Libero officia amet
-        deleniti consequuntur impedit. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Ratione aliquam delectus cum maiores, autem sit atque,
-        molestiae nihil eveniet excepturi fugiat officiis beatae blanditiis?
-        Libero officia amet deleniti consequuntur impedit. Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Ratione aliquam delectus cum maiores,
-        autem sit atque, molestiae nihil eveniet excepturi fugiat officiis
-        beatae blanditiis? Libero officia amet deleniti consequuntur impedit.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquam
-        delectus cum maiores, autem sit atque, molestiae nihil eveniet excepturi
-        fugiat officiis beatae blanditiis? Libero officia amet deleniti
-        consequuntur impedit. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Ratione aliquam delectus cum maiores, autem sit atque, molestiae
-        nihil eveniet excepturi fugiat officiis beatae blanditiis? Libero
-        officia amet deleniti consequuntur impedit.
+      <p className="w-full p-4 py-8 text-justify whitespace-pre-wrap">
+        {article.body}
       </p>
       {/* <button className="w-full p-4 mb-12 font-bold text-purple-500 transition-all bg-purple-200 rounded-full text-md active:scale-95">
         Show Comments
