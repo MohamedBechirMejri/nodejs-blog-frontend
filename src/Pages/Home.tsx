@@ -19,11 +19,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="">
-      <h1 className="fixed top-0 left-0 z-50 w-full px-8 py-4 text-3xl font-bold opacity-0 backdrop-blur-sm animate-revealLogo">
+    <div className="xl:px-32">
+      <h1 className="fixed top-0 left-0 z-50 w-full px-8 py-4 text-3xl font-bold opacity-0 backdrop-blur-sm animate-revealLogo xl:text-center">
         Blogs
       </h1>
-      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-20 pb-32 ">
+      <div className="flex flex-col items-center justify-start gap-20 p-8 pt-20 pb-32 xl:grid xl:grid-cols-3 ">
         {articles.length === 0 ? (
           <Loader />
         ) : (
@@ -33,13 +33,14 @@ const Home = () => {
               <Link
                 to={`/articles/${_id}`}
                 key={_id}
-                className=" h-[30vh] rounded-[2.5rem] w-[85vw] flex flex-col justify-end items-start text-white font-bold overflow-hidden transition-all hover:ring-4 ring-gray-500 animate-revealPage opacity-0"
+                className=" h-[30vh] rounded-[2.5rem] w-[85vw] flex flex-col justify-end items-start text-white font-bold overflow-hidden transition-all hover:ring-4 ring-gray-500 animate-revealPage opacity-0 xl:w-full xl:h-[24rem]"
                 style={{
                   backgroundImage: `url(${image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                   animationDelay: `${(i + 1) * 0.1}s`,
+                  gridArea: i === 0 ? "1 / 1 / 2 / 4" : "",
                 }}
               >
                 <div className="p-4 bg-[#00000055] w-full h-full relative">
