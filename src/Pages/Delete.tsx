@@ -31,7 +31,7 @@ const Delete = () => {
   return !article ? (
     <Loader />
   ) : (
-    <div className="flex flex-col items-center justify-center h-screen gap-4 p-8">
+    <div className="flex flex-col items-center justify-center h-screen gap-4 p-8 max-w-[800px] m-auto">
       <h1 className="flex flex-col items-center justify-center gap-2 text-2xl font-bold">
         {/* Are you sure you want to{" "} */}
         {/* <span className="font-bold text-red-500 "> */}
