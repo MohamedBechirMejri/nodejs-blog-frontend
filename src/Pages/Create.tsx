@@ -96,7 +96,7 @@ const Create = () => {
         onChange={e => setImage(e.target.value)}
       />
       <select
-        className="w-full p-5 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium"
+        className="w-full p-5 transition-all rounded-lg border-white focus:border-[#F26865] focus:ring-[#F26865] outline-none placeholder:font-medium capitalize"
         placeholder="Category"
         required
         value={category}
@@ -106,7 +106,7 @@ const Create = () => {
           <option
             key={category._id}
             value={category._id}
-            className="text-xl font-medium transition-all "
+            className="text-xl font-medium capitalize transition-all"
           >
             {category.name}
           </option>
