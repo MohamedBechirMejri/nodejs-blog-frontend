@@ -61,9 +61,9 @@ const Comments = ({
         return (
           <div
             key={_id}
-            className="flex items-center justify-start w-full gap-4 pt-8"
+            className="flex flex-wrap items-center justify-start w-full gap-4 pt-8"
           >
-            <div className="flex flex-col items-center justify-center gap-2 pr-4 font-bold min-w-max">
+            <div className="flex items-center justify-center gap-2 pr-4 font-bold min-w-max">
               <img
                 src={user.picture}
                 alt="user"
