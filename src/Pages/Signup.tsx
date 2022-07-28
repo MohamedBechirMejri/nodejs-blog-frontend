@@ -53,7 +53,7 @@ const Signup = () => {
 
   return (
     <form
-      className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 animate-revealPage"
+      className="flex flex-col items-center justify-center w-full h-full min-h-screen gap-8 p-8 animate-revealPage max-w-[800px] m-auto"
       onSubmit={handleSubmit}
       autoComplete="on"
     >
